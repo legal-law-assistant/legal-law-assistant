@@ -63,3 +63,25 @@ def test_ask_rejects_missing_question():
     )
 
     assert response.status_code == 422
+
+
+def test_ask_rejects_question_over_2000_characters():
+    response = client.post(
+        "/api/v1/ask",
+        json={
+            "question": "a" * 2001,
+            "conversation_id": None,
+        },
+    )
+    assert response.status_code == 422
+
+
+def test_ask_rejects_question_with_only_whitespace():
+    response = client.post(
+        "/api/v1/ask",
+        json={
+            "question": "     ",
+            "conversation_id": None,
+        },
+    )
+    assert response.status_code == 422
