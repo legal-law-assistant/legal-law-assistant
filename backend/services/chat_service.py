@@ -4,6 +4,7 @@ from uuid import uuid4
 from backend.schemas import AskRequest, AskResponse
 
 
+
 def answer_question(request: AskRequest) -> AskResponse:
     """Trả phản hồi mẫu cho API hỏi đáp.
 
