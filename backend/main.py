@@ -4,7 +4,7 @@ from uuid import uuid4
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
-from schemas import AskRequest, AskResponse
+from backend.schemas import AskRequest, AskResponse
 
 
 app = FastAPI(
